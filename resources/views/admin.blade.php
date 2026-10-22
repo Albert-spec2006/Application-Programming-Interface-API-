@@ -1,50 +1,50 @@
 @extends('layouts.master')
 
-@section('title', 'Orbit - Admin Dashboard')
+@section('title', 'Dashboard Admin — DIKS HAIR CUT')
 
 @section('content')
-<div class="d-flex">
-    <!-- Sidebar Ringkas -->
-    <div class="bg-dark text-white p-3" style="min-height: 100vh; width: 240px;">
-        <h3 class="fw-bold px-2 text-info">Orbit Admin</h3>
-        <hr>
-        <ul class="nav flex-column gap-2">
-            <li class="nav-item"><a href="#" class="nav-link text-white active"><i class="bi bi-speedometer2 me-2"></i> Dashboard</a></li>
-            <li class="nav-item"><a href="#" class="nav-link text-white"><i class="bi bi-folder me-2"></i> Projects</a></li>
-            <li class="nav-item"><a href="#" class="nav-link text-white"><i class="bi bi-people me-2"></i> Team Experts</a></li>
-            <hr>
-            <li class="nav-item"><a href="{{ route('frontend') }}" class="nav-link text-danger"><i class="bi bi-box-arrow-left me-2"></i> Logout</a></li>
-        </ul>
+<div class="diks-admin">
+  <aside class="diks-admin-sidebar">
+    <a class="diks-admin-brand" href="{{ route('frontend') }}"><span>D</span><b>DIKS <em>HAIR CUT</em><small>BARBER SHOP ADMIN</small></b></a>
+    <p class="diks-admin-label">MENU UTAMA</p>
+    <a class="diks-admin-nav is-active" href="{{ route('admin') }}"><span>▦</span> Ringkasan</a>
+    <a class="diks-admin-nav" href="{{ route('frontend') }}#layanan"><span>✂</span> Lihat layanan</a>
+    <div class="diks-admin-sidebar-bottom">
+      <a class="diks-admin-nav" href="{{ route('frontend') }}"><span>↗</span> Lihat website</a>
+      <div class="diks-admin-user"><span class="diks-admin-avatar">D</span><span><b>Admin DIKS</b><small>Panel pengelola</small></span></div>
     </div>
+  </aside>
 
-    <!-- Konten Utama Dashboard -->
-    <div class="flex-grow-1 p-5 bg-light">
-        <div class="d-flex justify-content-between align-items-center mb-4">
-            <h2>Selamat Datang di Halaman Admin</h2>
-            <span class="badge bg-success p-2">Sesi Aktif</span>
-        </div>
-        
-        <!-- Statistik Sederhana Menggunakan Gaya Orbit -->
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="card p-4 shadow-sm border-0 bg-primary text-white">
-                    <h1>150+</h1>
-                    <p class="mb-0">Projects Launched</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card p-4 shadow-sm border-0 bg-info text-white">
-                    <h1>40+</h1>
-                    <p class="mb-0">Team Experts</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card p-4 shadow-sm border-0 bg-warning text-white">
-                    <h1>98%</h1>
-                    <p class="mb-0">Client Satisfaction</p>
-                </div>
-            </div>
-        </div>
+  <main class="diks-admin-main">
+    <header class="diks-admin-topbar">
+      <div><span class="diks-admin-breadcrumb">DIKS HAIR CUT /</span> Ringkasan</div>
+      <a href="{{ route('frontend') }}">Kunjungi website <span>↗</span></a>
+    </header>
+    <div class="diks-admin-content">
+      <div class="diks-admin-welcome">
+        <div><p class="diks-kicker">PANEL PENGELOLA</p><h1>Selamat datang, <em>Admin.</em></h1><p>Kelola tampilan dan informasi DIKS HAIR CUT dari sini.</p></div>
+        <span class="diks-admin-status"><i></i> Sesi aktif</span>
+      </div>
+
+      <section class="diks-admin-stats" aria-label="Ringkasan data">
+        <article><span>LAYANAN UNGGULAN</span><b>03</b><small>Potongan &amp; grooming</small><i>✂</i></article>
+        <article><span>RESERVASI HARI INI</span><b>—</b><small>Belum ada data reservasi</small><i>◷</i></article>
+        <article><span>ULASAN PELANGGAN</span><b>—</b><small>Data akan tampil di sini</small><i>☆</i></article>
+      </section>
+
+      <section class="diks-admin-lower">
+        <article class="diks-admin-panel">
+          <div class="diks-admin-panel-heading"><div><p class="diks-kicker">AKSES CEPAT</p><h2>Website barbershop</h2></div><span>✳</span></div>
+          <a class="diks-admin-action" href="{{ route('frontend') }}#layanan"><span class="diks-admin-action-icon">✂</span><span><b>Pratinjau layanan</b><small>Lihat layanan DIKS HAIR CUT</small></span><i>↗</i></a>
+          <a class="diks-admin-action" href="{{ route('frontend') }}#layanan"><span class="diks-admin-action-icon">◎</span><span><b>Pratinjau website</b><small>Lihat tampilan DIKS HAIR CUT</small></span><i>↗</i></a>
+        </article>
+        <article class="diks-admin-note">
+          <span class="diks-admin-note-icon">✳</span><p class="diks-kicker">DIKS HAIR CUT</p><h2>Rapi itu soal karakter.</h2><p>Jaga setiap detail tetap konsisten — dari layanan sampai pengalaman pelanggan.</p><a href="{{ route('frontend') }}">Buka website <span>↗</span></a>
+        </article>
+      </section>
+
+      <footer class="diks-admin-footer">© {{ date('Y') }} DIKS HAIR CUT <span>PANEL PENGELOLA</span></footer>
     </div>
+  </main>
 </div>
 @endsection

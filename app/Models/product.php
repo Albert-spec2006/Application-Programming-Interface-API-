@@ -7,7 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     protected $fillable = [
-        'model_rambut',
-        'harga',
+        'name',
+        'category',
+        'description',
+        'price',
+        'stock',
+        'image',
+        'is_active',
     ];
+    protected $casts = [ 'price' => 'decimal:2', 'is_active' => 'boolean', ];
 }

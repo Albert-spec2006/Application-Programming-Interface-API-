@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
+use App\Http\Controllers\ProductController;
+Route::resource('products', ProductController::class);
 
 // 1. Halaman Utama Frontend
 Route::get('/', function () {
